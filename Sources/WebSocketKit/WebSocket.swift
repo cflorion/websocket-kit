@@ -6,7 +6,7 @@ import Foundation
 import NIOFoundationCompat
 
 public final class WebSocket {
-    enum PeerType {
+    public enum PeerType {
         case server
         case client
     }
@@ -35,7 +35,7 @@ public final class WebSocket {
     private var waitingForClose: Bool
     private var scheduledTimeoutTask: Scheduled<Void>?
 
-    init(channel: Channel, type: PeerType) {
+    public init(channel: Channel, type: PeerType) {
         self.channel = channel
         self.type = type
         self.onTextCallback = { _, _ in }
